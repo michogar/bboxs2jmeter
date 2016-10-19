@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Get Random BBOXs</title>
+
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+</head>
+<body onload="onload()">
+	<label for="url">URL</label>
+	<input type="text" id="url"> </input>
+	<br>
+	<label for="layer">Layer</label>
+	<input type="text" id="layer"> </input>
+		<br>
+	<label for="center_latitude">Center Lat</label>
+	<input type="text" id="center_latitude"> </input>
+		<br>
+	<label for="center_longitude">Center Lon</label>
+	<input type="text" id="center_longitude"> </input>
+		<br>
+	<label for="initial_zoom">Zoom</label>
+	<input type="text" id="initial_zoom"> </input>
+		<br>
+		<button id="setmap">Set Map</button>
+			<br>
+			<button id="getbboxs"> Get BBOXs</button>
+			<label for="number_bboxs">Number BBOXs</label>
+			<input type="text" id="number_bboxs"> </input>
+				<br>
+	<div id="mapid" style="width: 600px; height: 400px;"></div>
+	<br>
+	<textarea  cols="1" id="textareabboxs" style="width: 100%; height: 400px;">
+</textarea>
+	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
