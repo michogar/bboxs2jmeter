@@ -96,10 +96,10 @@ function onload(){
 
   btnGetBBBOXs.addEventListener('click', function(evt) {
 
-    var THOUSANDM = 1000;
-    var TENTHOUSADNM = 100000;
+    var ZERO = 0;
     var number_bboxs = parseInt(document.getElementById('number_bboxs').value);
     var current_bbox = mymap.getBounds();
+    var intial_distance = current_bbox.getNorthWest().distanceTo(current_bbox.getSouthEast());
     var textareabboxs = document.getElementById('textareabboxs');
     textareabboxs.value = "";
 
@@ -107,7 +107,7 @@ function onload(){
       var i = 0;
       for ( i; i<number_bboxs; i++) {
             var latlng = randomPointInBounds(current_bbox);
-            var distance = Math.floor(Math.random() * (TENTHOUSADNM - THOUSANDM + 1)) + THOUSANDM;
+            var distance = Math.floor(Math.random() * (intial_distance - ZERO + 1)) + ZERO;
             var newbounds = latlng.toBounds(distance);
             if (current_bbox.contains(newbounds)) {
               textareabboxs.value = textareabboxs.value + '\n ' + newbounds.toBBoxString();
